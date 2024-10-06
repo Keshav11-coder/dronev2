@@ -102,7 +102,7 @@ void loop() { } // Empty for now.
 ```
 
 
-## Using the built-in `pid` system
+## Using the `pid` system
 ### Make your PID instance
 ```cpp
 dronev2::pid pid1({3.55, 0.005, 0.0001}); // accepts an std::vector<float>.
