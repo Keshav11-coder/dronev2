@@ -23,7 +23,7 @@
     - [Basic Usage](#basic-usage)
     - [Combining Tasks](#combining-tasks)
 
-# `dronev2` *Initial release* - v1.0
+# `dronev2` *Modular release* - v1.0.1
 Introducing `dronev2`, a drone interfacing library which aims to improve the way we program drones. The library features a modular and structural design, making it easier for new developers to start programming their drones. 
 
 The library does not only focus on drone programming, but also offers a fairly simple tasking/scheduling system which could be useful in new projects.
@@ -35,11 +35,10 @@ The library is licensed under the MIT license. This was chosen over the other op
 Be on the lookout for future versions that offer these functionalities.
 
 ## Release information
-This is the initial release, and marks the beginning of many more to come. There's nothing much to say but explain the functionality for this release.
+This is the release after the initial release, and divides the initial release into multiple modular parts.
 
-This release is quite extensive, so I'm breaking it into the most important parts.
-
-We introduce many concepts, such as the following:
+> [!NOTE]
+> This is a small, simple release after the initial release, so the documentation does not change much.
 
 ### Basic 
 - *`struct`* `motor`: A pretty basic motor class that allows you to do basic arming and writing. It also includes a built-in `failsafe` system. 
