@@ -8,7 +8,7 @@
 2. [Release Information](#release-information)
     - [Basic Features](#basic)
     - [More Advanced Features](#more-advanced)
-    - [Heart of Everything](#heart-of-everything)
+    - [The Drone Class](#the-drone-class)
 3. [Setup & Usage](#dronev2-setup--usage)
     - [Installation in the Arduino IDE](#installation-in-the-arduino-ide)
     - [Get Started](#get-started)
@@ -24,32 +24,28 @@
     - [Combining Tasks](#combining-tasks)
 
 # `dronev2` *Modular release* - v1.0.1
-Introducing `dronev2`, a drone interfacing library which aims to improve the way we program drones. The library features a modular and structural design, making it easier for new developers to start programming their drones. 
+`dronev2`, a drone interfacing library which aims to improve the way we program drones. The library features a modular and structural design, making it easier for new developers to start programming their drones. 
 
 The library does not only focus on drone programming, but also offers a fairly simple tasking/scheduling system which could be useful in new projects.
 
-But for now, we're keeping all of these features in one namespace. In future releases we will focus on having that pure modular design, where you can include what you need and leave out what you don't need. This is a problem with a lot of libraries, as they offer a bunch of methods you don't actually need.
+We finally decided to split the main codebase which originally consisted of `dronev2.h` and `dronev2.cpp` into multiple parts with their respective classes or structs. All modules still stay under the namespace `dronev2` to have most previous codebases still working after this change.
 
 The library is licensed under the MIT license. This was chosen over the other open-source licenses because we offer functionality. If you're here for something specific, you can take that.
 
-Be on the lookout for future versions that offer these functionalities.
+Be on the lookout for future versions that introduce more modules! 
 
 ## Release information
-This is the release after the initial release, and divides the initial release into multiple modular parts.
-
-> [!NOTE]
-> This is a small, simple release after the initial release, so the documentation does not change much.
+This release splits the library into multiple different modules for easy interfacing and to have a more straightforward modular design.
 
 ### Basic 
-- *`struct`* `motor`: A pretty basic motor class that allows you to do basic arming and writing. It also includes a built-in `failsafe` system. 
-- *`enum`* classification`: This is nothing major, just an enum class that allows you to identify if the drone is part of the freestyle or cinematic drones. This can be useful when building drones that can switch modes mid air.
-- *`struct`* `pid`: A fairly simple PID system that allows for basic functions such as `run`, `adjust` (modifying values) and `reset`.
+- **Motors** (*`struct`* `motor`): A pretty basic motor class that allows you to do basic arming and writing. It also includes a built-in `failsafe` system.
+- **PID systems** (*`struct`* `pid`): A fairly simple PID system that allows for basic functions such as `run`, `adjust` (modifying values) and `reset`.
 
 ### More advanced
-- *`class`* `task`: This is part of a modular system. It is a singular task that belongs to a thread, or can be executed individually if you prefer it like that. It includes a built-in `interval` system for periodic execution. The only downside is that this system needs its execution to happen inside of an existing loop, requiring a bit more handling in the functions. The given function can also be `lambda`, because it uses `std::function`.
-- *`class`* `thread`: Requires `task` to operate. This is basically a collection of scheduled tasks. It offers some basic threading functions, such as `add_task`, `remove_task`, `update_task_interval` (for more advanced systems), `clear` and also requires the function `run` to be executed continuously in a loop. Aside from that it allows you to initialize the thread instance with default tasks inside the constructor. This is managed by a variadic template so it can be any amount.
-- *`class`* `thread_ptr`: Almost the same as `thread`, but instead of task objects it requires task pointer objects. This is used in the `drone` class' main thread.
-### Heart of everything
+- **Tasks** (*`class`* `task`): This is part of a modular system. It is a singular task that belongs to a thread, or can be executed individually if you prefer it like that. It includes a built-in `interval` system for periodic execution. The only downside is that this system needs its execution to happen inside of an existing loop, requiring a bit more handling in the functions. The given function can also be `lambda`, because it uses `std::function`.
+- **Threads** (*`class`* `thread`): Requires `task` to operate. This is basically a collection of scheduled tasks. It offers some basic threading functions, such as `add_task`, `remove_task`, `update_task_interval` (for more advanced systems), `clear` and also requires the function `run` to be executed continuously in a loop. Aside from that it allows you to initialize the thread instance with default tasks inside the constructor. This is managed by a variadic template so it can be any amount.
+- **Threads for pointers** (*`class`* `thread_ptr`): Almost the same as `thread`, but instead of task objects it requires task pointer objects. This is used in the `drone` class' main thread.
+### The drone class
 - *`class`* `drone`: The base class for the drone. It combines most of the previous functionalities into one. The setup is pretty simple: you declare the object, and then specify your `motors`, (optional) `stabilization` & `imu` in the chain. See the API usage in code blocks below for a more detailed reference.
 
 # `dronev2` Setup & usage
