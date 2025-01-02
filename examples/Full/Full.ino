@@ -9,7 +9,7 @@
  */
 
 #include <dronev2.h> // Main API (major things such as `Profile`, `Drone`, `drone_event_t` can be found here)
-#include <dronev2/tasker.h> // Built-in taskign system (also includes `thread` for combining tasks to prevent clutter)
+#include <dronev2/tasker.h> // Built-in tasking system (also includes `thread` for combining tasks to prevent clutter)
 #include <dronev2/mpu6050.h> // Built-in imu class
 #include <dronev2/bmp280.h> // Built-in barometer class
 #include <dronev2/ESC.h> // Built-in ESC class
