@@ -1,4 +1,4 @@
-![License](https://img.shields.io/github/license/Keshav11-coder/dronev2)
+![License](https://img.shields.io/github/license/Keshav11-coder/dronev2?label=license)
 ![Issues](https://img.shields.io/github/issues/Keshav11-coder/dronev2)
 ![Release](https://img.shields.io/github/v/release/Keshav11-coder/dronev2)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/Keshav11-coder/dronev2)
