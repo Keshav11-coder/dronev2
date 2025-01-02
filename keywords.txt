@@ -1,0 +1,124 @@
+# datatypes and class names
+
+# library namespace
+dronev2	KEYWORD1
+
+# dronev2-specific (or required)
+Profile	KEYWORD1
+Drone<>	KEYWORD1
+Drone	KEYWORD1
+
+# profile methods
+getAllocationMatrix	KEYWORD2
+getInverseAllocationMatrix	KEYWORD2
+getInertiaMatrix	KEYWORD2
+getMass	KEYWORD2
+getPayloadCapacity	KEYWORD2
+getPropellerDiameter	KEYWORD2
+getPropellerPitch	KEYWORD2
+getArmLength	KEYWORD2
+getMotorKvRating	KEYWORD2
+getOperatingVoltage	KEYWORD2
+
+setAllocationMatrix	KEYWORD2
+setInverseAllocationMatrix	KEYWORD2
+setInertiaMatrix	KEYWORD2
+setMass	KEYWORD2
+setPayloadCapacity	KEYWORD2
+setPropellerDiameter	KEYWORD2
+setPropellerPitch	KEYWORD2
+setArmLength	KEYWORD2
+setMotorKvRating	KEYWORD2
+setOperatingVoltage	KEYWORD2
+
+# drone interface methods
+bindGx	KEYWORD2
+bindGy	KEYWORD2
+bindGz	KEYWORD2
+bindAx	KEYWORD2
+bindAy	KEYWORD2
+bindAz	KEYWORD2
+bindRoll	KEYWORD2
+bindPitch	KEYWORD2
+bindYaw	KEYWORD2
+
+addSensor	KEYWORD2
+sensor	KEYWORD2
+
+setThrustControllers	KEYWORD2
+setMotorSpeeds	KEYWORD2
+
+
+# external built-in libraries
+ESC	KEYWORD1
+mpu6050	KEYWORD1
+bmp280	KEYWORD1
+neo6m	KEYWORD1
+nrf24	KEYWORD1
+
+# typical thruster methods
+write	KEYWORD2
+arm	KEYWORD2
+disarm	KEYWORD2
+stop	KEYWORD2
+restart	KEYWORD2
+min	KEYWORD2
+max	KEYWORD2
+
+engage	KEYWORD3
+disengage	KEYWORD3
+status	KEYWORD3
+
+# typical sensor methods
+read	KEYWORD2
+begin	KEYWORD2
+calibrate	KEYWORD2
+
+temperature	KEYWORD2
+pressure	KEYWORD2
+altitude	KEYWORD2
+density	KEYWORD2
+
+# external built-in tools
+matrix	KEYWORD1
+task	KEYWORD1
+thread	KEYWORD1
+
+# matrix core methods
+rows	KEYWORD3
+columns	KEYWORD3
+
+row	KEYWORD3
+column	KEYWORD3
+
+print	KEYWORD3
+
+hadamard	KEYWORD2
+T	KEYWORD2
+flattened	KEYWORD3
+pseudoinverse	KEYWORD2
+set	KEYWORD2
+
+forEach	KEYWORD2
+
+sum	KEYWORD2
+enlarge	KEYWORD2
+
+# task core methods
+execute	KEYWORD2
+
+# drone event class
+drone_event_t	KEYWORD1
+
+# drone event methods
+compose	KEYWORD2
+severity	KEYWORD2
+message	KEYWORD2
+sector	KEYWORD2
+code	KEYWORD2
+
+# drone event severity literals
+notice	LITERAL1
+caution	LITERAL1
+error	LITERAL1
+critical	LITERAL1
